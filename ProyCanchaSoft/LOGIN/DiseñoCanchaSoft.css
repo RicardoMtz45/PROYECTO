@@ -1,0 +1,96 @@
+body {
+	margin: 0;
+	padding: 0;
+	background-image: url(/ProyCanchaSoft/Imagenes/FondoLogin.avif);
+	background-size: cover;
+	background-attachment: fixed;
+	height: 100vh;
+	font-family: sans-serif;
+}
+.contact-form {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	width: 400px;
+	height: 500px;
+	padding: 80px 40px;
+	box-sizing: border-box;
+	background-color: rgba(41, 39, 39, 0.3);
+	box-shadow: 0 5px 30px black;
+}
+.avatar {
+	position: absolute;
+	width: 150px;
+	height: 150px;
+	border-radius: 50%;
+	overflow: hidden;
+	top: calc(-150px/2);
+	left: calc(44% - 56px);
+	border: 7px solid #fff;
+}
+.contact-form h2 {
+	margin: 15px;
+	padding: 0 0 20px;
+	color: #fff;
+	text-align: center;
+	text-transform: uppercase;
+}
+.contact-form p {
+	margin: 0;
+	padding: 0;
+	font-weight: bold;
+	color: #fff;
+}
+.contact-form input {	
+	border: none;
+	border-bottom-color: currentcolor;
+	border-bottom-style: none;
+	border-bottom-width: medium;
+	width: 90%;
+	border-bottom: 2px solid white;
+	padding: 10px;
+	margin-bottom: 20px;
+	font-size: 14px;
+	font-weight: bold;
+	background-color: transparent;
+	color: white;
+}
+.contact-form input[type="text"], 
+.contact-form input[type="password"] {
+	border: none;
+	border-bottom: 1px solid #fff;
+	background: transparent;
+	outline: none;
+	height: 40px;
+	color: #fff;
+	font-size: 16px;
+}
+.btn2 {
+	padding: 10px;
+	width: 150px;
+	border-radius: 20px;
+	background-color: rgb(10, 136, 43);
+	border-style: none;
+	color: white;
+	font-weight: 600;
+	margin: 10% 0;
+}
+.btn-area {
+	display: flex;
+	justify-content: center;
+}
+.contact-form a {
+	color: #fff;
+	font-size: 14px;
+	font-weight: bold;
+	text-decoration: none;
+}
+.rem {
+	text-align: center;
+	color: rgb(199, 197, 197) !important;
+	font-size: 16px;
+}
+input[type="checkbox"] {
+	width: 5%;
+}

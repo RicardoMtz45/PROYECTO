@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>CanchaSoft</title>
+    <link rel="stylesheet" href="DiseñoCanchaSoft.css">
+</head>
+<body>
+    <div class="contact-form">
+        <img src="/ProyCanchaSoft/Imagenes/Logo.png" class="avatar">
+        <h2>Login Form</h2>
+
+        <form id="loginForm">
+        <!--<form action="/ProyCanchaSoft/login.php" method="POST">-->
+            <input type="text" id="email" placeholder="Email">
+            <input type="password" id="password" placeholder="Password">
+            <p class="rem">
+                <input type="checkbox" id="terms"> Acepto términos y condiciones
+            </p>
+            <div class="btn-area">
+                <button type="submit" class="btn2">LOGIN</button>
+            </div>
+        </form>
+    </div>
+
+    <script>
+        document.getElementById("loginForm").addEventListener("submit", function (e) {
+            e.preventDefault();
+    
+            const email = document.getElementById("email").value.trim();
+            const password = document.getElementById("password").value.trim();
+            const terms = document.getElementById("terms").checked;
+    
+            if (email === "" || password === "") {
+                alert("Por favor, completa todos los campos.");
+                return;
+            }
+    
+            if (!terms) {
+                alert("Debes aceptar los términos y condiciones.");
+                return;
+            }
+    
+            fetch("/ProyCanchaSoft/LOGIN/LoginAPI.php", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({
+                    Correo: email,
+                    Contraseña: password
+                })
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    window.location.href = "/ProyCanchaSoft/ADMIN/Amin.php";
+                } else {
+                    alert(data.message);
+                }
+            })
+            .catch(error => {
+                console.error("Error al enviar login:", error);
+                alert("Hubo un problema con el servidor.");
+            });
+        });
+    </script>
+    
+</body>
+</html>
+
